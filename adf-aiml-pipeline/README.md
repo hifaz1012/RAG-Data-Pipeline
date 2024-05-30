@@ -48,7 +48,7 @@
 2. Set parameters as described in comments
 3. Remove comments from file starting with // since JSON parser does not support comments
 
-- Configure AI service keys in env file
+- Configure AI Service keys in env file
 1. Rename `env_template` to `.env`
 2. Set Keys to AI Services as described in comments (From "Keys and Endpoints" tab of Azure AI Services)
 
@@ -58,13 +58,13 @@
 
 - [Optional] Configure the `pipeline.yml` `default_compute` parameter. The default value is set to `azureml:serverless` and can be changed to `azureml:[compute-cluster-name]` for a dedicated cluster.
 
-- Login to azure:
-    `az login` (Brower window will open and authenticate using correct subscription)
-
 - Ensure that Azure ML  has access to Blob Storage by going into your storage account > IAM > Add role assignment, and add the permissions to you Azure Identity or ML workspace managed identity:
 
     1. Storage Blob Data Contributor
     2. Storage Queue Data Contributor
+
+- Login to azure:
+    `az login` (Brower window will open and authenticate using correct subscription)
 
 
 - Create an AML Datastore to connect to Azure Blob Storage. Run the command
@@ -107,14 +107,14 @@ and select `sharepoint_copyfiles_pipeline_ml_template.zip`
 
 ![alt text](img/image-6.png)
 
-1. Create Linked Service to Azure ML workspace 
+1. Create Linked Service to `Azure ML workspace `
 ![alt text](img/image-8.png)
 
-2. Select Linked Service to SharePoint Online
+2. Select Linked Service to SharePoint Online created in previous step
 
-3. Create Linked Service to HTTP Connection (this is required to Copy files from Sharepoint)
+3. Create Linked Service to `HTTP Connection` (this is required to Copy files from Sharepoint)
 
-Base URL : https://[Sharepoint Domain Name]/sites/[Site Name]/_api/web/ . Replace with your sharepoint domain name and site name.
+Base URL : https://`[Sharepoint Domain Name]`/sites/`[Site Name]`/_api/web/ . Replace with your sharepoint domain name and site name.
 
 Authentication: Anonymous
 
@@ -124,9 +124,9 @@ Authentication: Anonymous
 
 ![alt text](img/image-10.png)
 
-- Once Linked Services are setup, click `Use this template' to create pipeline
+- Once Linked Services are setup, click `Use this template'` to create pipeline
 
-- Make Configuration changes to Datasets (Under Datasets menu)
+- Make Configuration changes to Datasets (Under `Datasets` menu)
 1. `FabricSingealth_HttpConn_DS2`: In `Relative URL` 
  @concat('GetFileByServerRelativeUrl(%27/sites/`Fabric-SingHealth`/Shared%20Documents/',dataset().filename,'%27)/$value') Replace `Fabric-SingHealth` with your sitename
 
@@ -157,9 +157,9 @@ pip install -r requirements.txt
 E.g python data_preparation.py --config config_test.json --njobs=1 --form-rec-resource "doc-intelligence-singhealth1" --form-rec-key "xxxxx" --form-rec-use-layout --embedding-model-endpoint "https://test-openai-swe-central1.openai.azure.com/openai/deployments/text-embedding-ada-002/embeddings?api-version=2023-06-01-preview" --embedding-model-key "xxxxx"
 
 # Features Pending for Development
--  Incremental copy of documents from sharepoint and incremental indexing in AI Search using Audit Table in Azure SQLDB for tracking (The current pipeline supports full load, so delete index and recreate index if new documents are added to sharepoint)
-- Current Authentication to AI services is key based, refactor code to use managed identities (for deployment in HCC)
-- Testing of ML Pipeline using Managed Private VNET setup https://learn.microsoft.com/en-us/azure/machine-learning/how-to-managed-network?view=azureml-api-2&tabs=azure-cli (for deployment in HCC)
+-  Incremental copy of documents from sharepoint and incremental indexing in AI Search using Audit Table in Azure SQLDB for tracking new and updated documents (The current pipeline supports full load, so delete index and recreate index if new documents are added to sharepoint)
+- Current Authentication to AI services is key based, refactor code to use Managed Identities (for deployment in HCC)
+- Testing of ML Pipeline using Azure ML Managed Private VNET setup https://learn.microsoft.com/en-us/azure/machine-learning/how-to-managed-network?view=azureml-api-2&tabs=azure-cli (for deployment in HCC)
 
 
 

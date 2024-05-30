@@ -1,0 +1,18 @@
+{
+  // Size of text chunks (in tokens) for processing, typically for breaking down large documents
+  "chunk_size": 1024,
+  // Number of tokens to overlap between consecutive chunks to ensure context is not lost
+  "token_overlap": 128,
+  // Whether to use layout information from the Document Intelligence service
+  "use_layout": true,
+  // Number of parallel jobs to run. '1' means no parallelism
+  "njobs": 4,
+  // URL endpoint for the Document Intelligence service
+  "document_intelligence_endpoint": "https://doc-intelligence-singhealth1.cognitiveservices.azure.com/",
+  // URL endpoint for the Azure OpenAI Embedding service, including parameters like API version
+  "embedding_endpoint": "https://test-openai-swe-central1.openai.azure.com/openai/deployments/text-embedding-ada-002/embeddings?api-version=2023-06-01-preview",
+  // Name of the search index to be used or created
+  "index_name": "test-indexadf",
+  // Name of the Azure Cognitive Search service instance
+  "search_service_name": "cog-search-pnh3sidy433ua"
+}

@@ -1,0 +1,15 @@
+[
+    {
+        "data_path": "<local file path> or <path to blob storage container> e.g. https://[storage_name].blob.core.windows.net/[container_name]/",
+        "location": "<azure region where storage is created, e.g. 'westus2'>",
+        "subscription_id": "<subscription id>",
+        "resource_group": "<resource group name where Storage and AI Search Services are Created>",
+        "search_service_name": "<search service name to use or create> e.g. cog-search-pnh3sidy433ua",
+        "index_name": "<index name to use or create> e.g. test-index",
+        "chunk_size": 1024,
+        "token_overlap": 128,
+        "semantic_config_name": "default",
+        "vector_config_name": "default",
+        "language": "en"
+    }
+]

@@ -1,0 +1,3 @@
+DOCUMENT_INTELLIGENCE_KEY="Your Document Intelligence Key"
+EMBEDDING_KEY="Your Azure OpenAI Service Key"
+SEARCH_KEY="Your AI Search Key"

@@ -1,0 +1,3 @@
+AZURE_OPENAI_API_KEY="Your Azure OpenAI API Key"
+AZURE_OPENAI_ENDPOINT="Your Azure OpenAI Endpoint URL e.g. https://test-openai-swe-central1.openai.azure.com"
+OPENAI_API_VERSION="Your OpenAI API Version"

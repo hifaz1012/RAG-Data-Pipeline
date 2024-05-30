@@ -160,3 +160,7 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+adf-aiml-pipeline/config_test.json
+adf-aiml-pipeline/aml_config.json
+adf-aiml-pipeline/datastore.yml
+adf-aiml-pipeline/readme_backup.md

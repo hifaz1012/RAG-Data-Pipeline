@@ -1,3 +1,11 @@
 AZURE_OPENAI_API_KEY="Your Azure OpenAI API Key"
 AZURE_OPENAI_ENDPOINT="Your Azure OpenAI Endpoint URL e.g. https://test-openai-swe-central1.openai.azure.com"
 OPENAI_API_VERSION="Your OpenAI API Version"
+
+DOCUMENT_INTELLIGENCE_KEY="Your Document Intelligence Key"
+DOCUMENT_INTELLIGENCE_ENDPOINT="Your Document Intelligence Endpoint e.g. https://doc-intelligence-singhealth1.cognitiveservices.azure.com/"
+AZURE_SEARCH_ENDPOINT="Your AI Search Endpoint URL e.g. https://cog-search-pnh3sidy433ua.search.windows.net"
+AZURE_SEARCH_ADMIN_KEY="Your AI Search Admin Key"
+AZURE_SEARCH_INDEX_NAME="Your AI Search Index Name"
+
+EMBEDDING_MODEL="Embedding model deploynment name e.g. text-embedding-ada-002"

@@ -1,0 +1,5 @@
+On the search service itself, the two primary workloads are indexing and querying.  
+. Indexing is an intake process that loads content into your search service and makes it searchable. Internally, inbound text is processed into tokens and stored in inverted indexes for fast scans. You can upload JSON documents, or use an indexer to serialize your data into JSON.  
+Al enrichment through cognitive skills is an extension of indexing. If your content needs image or language analysis before it can be indexed, Al enrichment can extract text embedded in application files, translate text, and also infer text and structure from non-text files by analyzing the content.  
+. Querying can happen once an index is populated with searchable text, when your client app sends query requests to a search service and handles responses. All query execution is over a search index that you control.  
+Semantic search is an extension of query execution. It adds language understanding to search results processing, promoting the most semantically relevant results to the top.

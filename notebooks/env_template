@@ -9,4 +9,4 @@ AZURE_SEARCH_ADMIN_KEY="Your AI Search Admin Key"
 AZURE_SEARCH_INDEX_NAME="Your AI Search Index Name"
 
 EMBEDDING_MODEL="Embedding model deploynment name e.g. text-embedding-ada-002"
-VISION_MODEL="GPT4V model deploynment name e.g. gpt-4-vision"
+VISION_MODEL="GPT4V model deployment name e.g. gpt-4-vision"

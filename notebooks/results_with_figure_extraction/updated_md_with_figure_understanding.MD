@@ -113,25 +113,23 @@ Architecturally, a search service sits between the external data stores that con
 
 <figure>
 
-![](figures/0)<!-- FigureContent="The image depicts a conceptual diagram of a data indexing and search workflow using Azure Cognitive Search. The workflow is summarized in several steps:
+![](figures/0)<!-- FigureContent="This image is a flowchart that outlines a high-level architecture for integrating Azure Cognitive Search into an application. Here's a description of each part of the diagram:
 
-1. **Your Content**: There's a representation of content sources shown with two icons, one suggesting cloud storage and the other indicating on-premises storage behind a firewall.
+1. On the left, there is a box labeled "Your content," which is represented by icons of a storage device and a cloud with a firewall symbol, indicating the content can be in the cloud or behind a firewall.
 
-2. The content is then passed to **Azure Cognitive Search**, which is illustrated in the central section of the diagram. This involves three sub-processes:
-   - **Full Indexing**
-   - **Refresh Indexing**
-   - **AI Enrichment**
+2. The flowchart then moves right to elaborate on the Azure Cognitive Search process, with the Azure logo and a brain-like icon implying AI capabilities.
 
-These processes feed into the **Indexing Engine**, which processes the data to create **Indexes and Other Structures**.
+3. There are three main processes within Azure Cognitive Search, from left to right:
+   - "Indexing engine" with three arrows pointing into it, labeled "Full indexing," "Refresh indexing," and "AI enrichment," suggesting that the engine performs indexing based on the content and can refresh or update indexes and also use AI to enrich the data.
+   - "Indexes and other structures" sits between the indexing engine and query engine, storing the search indexes and other data structures required for searching.
+   - "Query engine" with two arrows connected to it, labeled "Query requests" and "Query responses," indicating the engine processes search queries and returns search results.
 
-3. The processed data is then ready for **Query engine**, which is depicted as the next step in the Azure Cognitive Search service.
+4. Finally, on the right, we have a box labeled "Your app" with a Windows logo on top, suggesting integration with a Windows application. Three points below detail the app's responsibilities:
+   - Collects user input
+   - Formulates and sends requests
+   - Handles responses (displaying a result set or a single document, etc.)
 
-4. To the right of the diagram is **Your App**, represented with the typical Windows logo, which interacts with the Azure Cognitive Search service by:
-   - Collecting user input
-   - Formulating and sending requests to the Query Engine
-   - Handling responses which can be either a result set or a single document
-
-The diagram uses arrows to indicate the flow of data and processes, from the content source to the application dealing with user requests and responses. It highlights the interaction between local or cloud content sources, the indexing process done by Azure, and the query handling by the application." --></figure>
+Arrows throughout the diagram indicate the directional flow of data and requests, starting from "Your content" all the way through to "Your app." The image effectively communicates how an application interacts with Azure Cognitive Search to index and retrieve content based on user queries." --></figure>
 
 
 In your client app, the search experience is defined using APIs from Azure Cognitive Search, and can include relevance tuning, semantic ranking, autocomplete, synonym matching, fuzzy matching, pattern matching, filter, and sort.

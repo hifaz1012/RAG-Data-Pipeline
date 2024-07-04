@@ -242,7 +242,7 @@ _inlineInstallationEnabled is set to True to enable inline pip installation in n
 
 Verify if OneLake `raw` folder contains documents copied from sharepoint and `processed` folder contains chunks
 
-Check if AI Search index is populated with text and vector contents of document chunks
+Verify if AI Search Index is populated with text and vector contents of document chunks
 
 # Reference Documentation 
 

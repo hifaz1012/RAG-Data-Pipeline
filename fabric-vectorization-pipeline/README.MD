@@ -240,9 +240,9 @@ _inlineInstallationEnabled is set to True to enable inline pip installation in n
 
 ![alt text](img/image-27.png)
 
-Check if OneLake raw folder contains documents from sharepoint and processed folder contains chunks
+Verify if OneLake `raw` folder contains documents copied from sharepoint and `processed` folder contains chunks
 
-Check if AI Search index is populated with text and vector contents
+Check if AI Search index is populated with text and vector contents of document chunks
 
 # Reference Documentation 
 
@@ -259,7 +259,7 @@ https://github.com/microsoft/Build-your-own-AI-Assistant-Solution-Accelerator/tr
 
 # Migrate Data pipeline to another tenant
 
-Currently Fabric does support feature for Export Data Pipeline to template file, Use the repo : https://github.com/rkniyer999/FabricAutomatedDataPipelineDeployment for data pipeline migration.
+Currently Fabric does not support feature for Export Data Pipeline to template file, Use the repo : https://github.com/rkniyer999/FabricAutomatedDataPipelineDeployment for data pipeline migration.
 
 # Features Pending for Development
 -  Incremental copy of documents from Sharepoint to OneLake and incremental indexing in AI Search using Control Table in Fabric SQLDB for tracking new and updated documents (The current pipeline supports full load, so delete index and recreate index if new documents are added to sharepoint)

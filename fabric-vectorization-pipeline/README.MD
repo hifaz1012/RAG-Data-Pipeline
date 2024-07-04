@@ -234,7 +234,7 @@ _inlineInstallationEnabled is set to True to enable inline pip installation in n
 
 # Run Pipeline and Verify Results
 
-- Run the Data Pipeline using `Run` command https://learn.microsoft.com/en-us/fabric/data-factory/pipeline-runs#on-demand-data-pipeline-run  or use `Schedule` command for pipeline schedule job https://learn.microsoft.com/en-us/fabric/data-factory/pipeline-runs#scheduled-data-pipeline-runs
+- Run the Data Pipeline using `Run` command https://learn.microsoft.com/en-us/fabric/data-factory/pipeline-runs#on-demand-data-pipeline-run  or use `Schedule` command to schedule pipeline job https://learn.microsoft.com/en-us/fabric/data-factory/pipeline-runs#scheduled-data-pipeline-runs
 
 - Verify if pipeline has sucessfully run using Monitor tab
 

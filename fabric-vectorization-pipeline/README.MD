@@ -211,6 +211,7 @@ C. **Notebook Activity**: Create Notebook activity as
 Set Workspace to Workspace Name previously created
 
 Set Notebook to Notebook (Semantic_Chunking_Vectorization.ipynb) previously created 
+```
 
 Set Base Parameters as
 
@@ -227,7 +228,6 @@ Set Base Parameters as
 
 _inlineInstallationEnabled is set to True to enable inline pip installation in notebook
 
-```
 
 ![alt text](img/image-26.png)
 

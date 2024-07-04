@@ -199,7 +199,7 @@ Set File Format to `Binary`
 
 ![alt text](img/image-24.png)
 
-C. **Notebook Activity **: Create Notebook activity as 
+C. **Notebook Activity**: Create Notebook activity as 
 
 - Enter name (ACT_SEMANTIC_CHUNKING_VECTORIZATION) and description as below.
 

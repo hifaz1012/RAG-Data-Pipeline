@@ -252,6 +252,8 @@ Set File Format to `Binary`
 
 ![alt text](img/image-29.png)
 
+![alt text](img/image-30.png)
+
 # Reference Documentation 
 
 https://learn.microsoft.com/en-us/fabric/data-factory/connector-sharepoint-online-list-overview

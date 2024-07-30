@@ -43,7 +43,7 @@ Microsoft Fabric is an end-to-end analytics SAAS data platform designed for ente
 
 ![alt text](img/image-5.png)
 
-2. Upload notebook `fabric-vectorization-pipeline\Semantic_Chunking_Vectorization.ipynb`
+2. Upload notebook `fabric-vectorization-pipeline\Semantic_Chunking_Vectorization_V1.ipynb`
 
 3. The notebook requires Python 3.11 to run. Select` Runtime version 1.3 Public Preview` from `Workspace Settings > Data Engineering/Science > Spark Settings` and click on Save.
 
@@ -122,6 +122,34 @@ b. **ForEach Activity**: Create a ForEach Activity as below
 
 The activities in ForEach are described in ForEach Pipeline.
 
+c. **Notebook Activity**: Create Notebook activity as 
+
+- Enter name (ACT_SEMANTIC_CHUNKING_VECTORIZATION) and description as below.
+
+![alt text](img/image-25.png)
+
+- Set `Settings` as 
+
+```
+Set Workspace to Workspace Name previously created
+
+Set Notebook to Notebook (Semantic_Chunking_Vectorization_V1.ipynb) previously created 
+```
+
+Set Base Parameters as
+
+| Name | Type | Value|
+|----------|----------|----------|
+| _inlineInstallationEnabled | Bool  | True | 
+| AZURE_OPENAI_ENDPOINT | String  | URL endpoint for the Azure OpenAI Service  |
+| VECTOR_STORE_ADDRESS | String  | URL endpoint for the Azure AI Search Service   |
+| EMBEDDING_MODEL  | String  | Embedding Model Deployment Name |
+| OPENAI_API_VERSION | String  | 2023-12-01-preview  |
+| INDEX_NAME   | String  | Azure AI Search Index Name |
+| DOC_INTELLIGENCE_ENDPOINT | String  | URL endpoint for the Azure AI Document Intelligent Service  |
+
+_inlineInstallationEnabled is set to True to enable inline pip installation in notebook
+
 4. ForEach Pipeline Activities
 
 a. **Web Activity**: Create Web Activity as below
@@ -199,34 +227,7 @@ Set File Format to `Binary`
 
 ![alt text](img/image-24.png)
 
-C. **Notebook Activity**: Create Notebook activity as 
 
-- Enter name (ACT_SEMANTIC_CHUNKING_VECTORIZATION) and description as below.
-
-![alt text](img/image-25.png)
-
-- Set `Settings` as 
-
-```
-Set Workspace to Workspace Name previously created
-
-Set Notebook to Notebook (Semantic_Chunking_Vectorization.ipynb) previously created 
-```
-
-Set Base Parameters as
-
-| Name | Type | Value|
-|----------|----------|----------|
-| _inlineInstallationEnabled | Bool  | True | 
-| file_name  | String  | @item().name  |
-| AZURE_OPENAI_ENDPOINT | String  | URL endpoint for the Azure OpenAI Service  |
-| VECTOR_STORE_ADDRESS | String  | URL endpoint for the Azure AI Search Service   |
-| EMBEDDING_MODEL  | String  | Embedding Model Deployment Name |
-| OPENAI_API_VERSION | String  | 2023-12-01-preview  |
-| INDEX_NAME   | String  | Azure AI Search Index Name |
-| DOC_INTELLIGENCE_ENDPOINT | String  | URL endpoint for the Azure AI Document Intelligent Service  |
-
-_inlineInstallationEnabled is set to True to enable inline pip installation in notebook
 
 
 ![alt text](img/image-26.png)
@@ -236,13 +237,20 @@ _inlineInstallationEnabled is set to True to enable inline pip installation in n
 
 - Run the Data Pipeline using `Run` command https://learn.microsoft.com/en-us/fabric/data-factory/pipeline-runs#on-demand-data-pipeline-run  or use `Schedule` command to schedule pipeline job https://learn.microsoft.com/en-us/fabric/data-factory/pipeline-runs#scheduled-data-pipeline-runs
 
-- Verify if pipeline has sucessfully run using Monitor tab
+- Verify if pipeline has sucessfully run using `Monitor` tab
 
 ![alt text](img/image-27.png)
 
-Verify if OneLake `raw` folder contains documents copied from sharepoint and `processed` folder contains chunks
+- Verify notebook output using Notebook snapshot
 
-Verify if AI Search Index is populated with text and vector contents of document chunks
+![alt text](img/image-28.png)
+
+- Verify chunks and search index
+    - Verify if OneLake `processed` folder contains documents copied from sharepoint 
+    - Verify if chunks folder with naming conventions `chunks_[File Name]_[Timestamp]` is created for each document. It should contain split files.
+    - Verify if AI Search Index is created populated with text and vector contents of document chunks using Azure Portal
+
+![alt text](img/image-29.png)
 
 # Reference Documentation 
 
@@ -263,5 +271,6 @@ Currently Fabric does not support feature for Export Data Pipeline to template f
 
 # Features Pending for Development
 -  Incremental copy of documents from Sharepoint to OneLake and incremental indexing in AI Search using Control Table in Fabric SQLDB for tracking new and updated documents (The current pipeline supports full load, so delete index and recreate index if new documents are added to sharepoint)
+- Parallel Processing of documents using PySpark https://learn-it-all.medium.com/parallelism-in-spark-notebook-execution-in-microsoft-fabric-8fb6ac3f79be
 - Current Authentication to AI services is key based, refactor code to use Managed Identities
 - Private Network Setup
